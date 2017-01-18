@@ -7,14 +7,14 @@
 <body>  
 
 <div class="container">  
-  <form id="contact" action="submit.html" method="post">
+  <form id="contact" action="submit.php" method="post">
     <h3>Kick Off 2017 Branding</h3>
     <br/>
     <fieldset>
-      <b>Please enter your name or Net ID:</b> <i>(Leave blank if you wish to remain anonymous)</i><input placeholder="Name or Net ID" type="text" tabindex="1" autofocus>
+      <b>Please enter your name or Net ID:</b> <i>(Leave blank if you wish to remain anonymous)</i><input placeholder="Name or Net ID" id="name" type="text" tabindex="1" autofocus>
     </fieldset>
     <fieldset>
-      <b>Which event did you attend?</b><input placeholder="Event" type="text" required>
+      <b>Which event did you attend?</b><input placeholder="Event" id="event" type="text" required>
     </fieldset>
     <br/>
     <fieldset>
@@ -73,7 +73,7 @@
     <fieldset>
     <br/>
     <b>Are the any other questions and/or comment you would like to ask or know more about?</b>
-      <textarea placeholder="Please enter you comments or questions..."></textarea>
+      <textarea id="comments" placeholder="Please enter you comments or questions..."></textarea>
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>

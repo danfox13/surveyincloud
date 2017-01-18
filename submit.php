@@ -1,16 +1,11 @@
-<html>
-<head>
-  <title>Kick Off 2017 - Feedback</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>  
-
-<div class="container">  
-  <form id="contact" action="" method="post">
-  <h3>Thank you for your feedback!</h3>
-  </form>
-</div>
-
-</body>
-</html>
+<?php
+echo $_POST["name"];
+echo $_POST["event"];
+echo $_POST["q1"];
+echo $_POST["q2"];
+echo $_POST["q3"];
+echo $_POST["q4"];
+echo $_POST["q5"];
+echo $_POST["q5"];
+echo $_POST["comments"];
+?>
