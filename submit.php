@@ -18,6 +18,6 @@ echo $_POST["q3"];
 echo $_POST["q4"];
 echo $_POST["q5"];
 echo $_POST["comments"];
-echo "<br/>"
+echo "<br/>";
 echo $url["user"];
 ?>
