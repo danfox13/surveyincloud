@@ -11,10 +11,10 @@
     <h3>Kick Off 2017 Branding</h3>
     <br/>
     <fieldset>
-      <b>Please enter your name or Net ID:</b> <i>(Leave blank if you wish to remain anonymous)</i><input placeholder="Name or Net ID" id="name" type="text" tabindex="1" autofocus>
+      <b>Please enter your name or Net ID:</b> <i>(Leave blank if you wish to remain anonymous)</i><input placeholder="Name or Net ID" name="name" type="text" tabindex="1" autofocus>
     </fieldset>
     <fieldset>
-      <b>Which event did you attend?</b><input placeholder="Event" id="event" type="text" required>
+      <b>Which event did you attend?</b><input placeholder="Event" name="event" type="text" required>
     </fieldset>
     <br/>
     <fieldset>
@@ -73,7 +73,7 @@
     <fieldset>
     <br/>
     <b>Are the any other questions and/or comment you would like to ask or know more about?</b>
-      <textarea id="comments" placeholder="Please enter you comments or questions..."></textarea>
+      <textarea name="comments" placeholder="Please enter you comments or questions..."></textarea>
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
