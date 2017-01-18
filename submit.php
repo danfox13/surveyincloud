@@ -25,8 +25,8 @@ if ($conn->connect_error) {
     header('Location: error.php');
 } 
 
-$sql = "INSERT INTO heroku_686d4942c2b2587.surveyresponse (name, event, q1, q2, q3, q4, q5, comments, timestamp)
-VALUES ('${name}', '${event}', '${q1}', '${q2}', '${q3}', '${q4}', '${q5}', '${comments}', 'getDate()')";
+$sql = "INSERT INTO heroku_686d4942c2b2587.surveyresponse (name, event, q1, q2, q3, q4, q5, comments)
+VALUES ('${name}', '${event}', '${q1}', '${q2}', '${q3}', '${q4}', '${q5}', '${comments}')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
