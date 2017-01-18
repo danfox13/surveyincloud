@@ -22,20 +22,21 @@ $comments = $_POST["comments"];
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-    //forward to error
+    header('Location: error.php');
 } 
 
-$sql = "INSERT INTO heroku_686d4942c2b2587.surveyresponse (name, event, q1, q2, q3, q4, q5, comments)
-VALUES ('${name}', '${event}', '${q1}', '${q2}', '${q3}', '${q4}', '${q5}', '${comments}')";
+$sql = "INSERT INTO heroku_686d4942c2b2587.surveyresponse (name, event, q1, q2, q3, q4, q5, comments, timestamp)
+VALUES ('${name}', '${event}', '${q1}', '${q2}', '${q3}', '${q4}', '${q5}', '${comments}', 'getDate()')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
+    header('Location: complete.php');
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
-    //forward to error
+    //header('Location: error.php');
 }
 
 $conn->close();
 
-//header('Location: complete.php');
+
 ?>
