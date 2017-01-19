@@ -22,7 +22,7 @@
           $date=date('Y-m-d H:i:s');
 
           if($date>'2017-01-19 20:40:00'){
-            echo "<option value="testEvent">Test - 19/01/17 - 8:40pm</option>";
+            echo '<option value="testEvent">Test - 19/01/17 - 8:40pm</option>';
           }
           if($date>'2017-01-24 09:00:00'){
             echo '<option value="telford20170124-9am">Telford - 24/01/17 - 9:00am</option>';
