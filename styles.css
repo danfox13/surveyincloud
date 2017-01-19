@@ -21,7 +21,18 @@ body {
   background: #ffffff;
 }
 
+
+select#event {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  color: #777;
+}
+
 #contact input[type="text"],
+#contact input[type="select"],
 #contact input[type="email"],
 #contact input[type="tel"],
 #contact input[type="url"],

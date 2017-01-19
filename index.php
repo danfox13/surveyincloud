@@ -14,7 +14,35 @@
       <b>Please enter your Net ID:</b> <i>(Leave blank if you wish to remain anonymous)</i><input placeholder="Net ID" name="name" type="text" tabindex="1" autofocus>
     </fieldset>
     <fieldset>
-      <b>Which event did you attend?</b><input placeholder="Event" name="event" type="text" required>
+    <?php
+        echo date('Y-m-d H:i:s');
+
+        $date=date('Y-m-d H:i:s');
+
+        if($date>'2017-01-10 00:00:00'){
+          echo "yes";
+        }
+    ?>
+      <b>Which event did you attend?</b><br/>
+      <select id="event" name="event">
+        <option value="">Please select your event</option>
+        <option value="telford20170124-9am">Telford - 24/01/17 - 9:00am</option>
+        <option value="telford20170124-1pm">Telford - 24/01/17 - 1:00pm</option>
+        <option value="telford20170124-3-30pm">Telford - 24/01/17 - 3:30pm</option>
+        <option value="telford20170125-9am">Telford - 25/01/17 - 9:00am</option>
+        <option value="telford20170125-1pm">Telford - 25/01/17 - 1:00pm</option>
+        <option value="telford20170125-3-30pm">Telford - 25/01/17 - 3:30pm</option>
+        <option value="telford20170126-9am">Telford - 25/01/17 - 9:00am</option>
+        <option value="telford20170126-1pm">Telford - 25/01/17 - 1:00pm</option>
+        <option value="telford20170126-3-30pm">Telford - 25/01/17 - 3:30pm</option>
+        <option value="worthing20170130-1pm">Worthing - 30/01/17 - 1:00pm</option>
+        <option value="worthing20170130-3-30pm">Worthing - 30/01/17 - 3:30pm</option>
+        <option value="london20170131-9-30am">London - 31/01/17 - 9:30am</option>
+        <option value="southend20170131-3-30pm">Southend - 31/01/17 - 3:30pm</option>
+        <option value="aston20170201-10am">Aston - 01/02/17 - 10:00am</option>
+        <option value="aston20170201-12-30am">Aston - 01/02/17 - 12:30pm</option>
+        <option value="newcastle20170202-10am">Newcastle - 02/02/17 - 10:00am</option>
+      </select>
     </fieldset>
     <br/>
     <fieldset>
