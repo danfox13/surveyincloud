@@ -18,11 +18,12 @@
       <select id="event" name="event">
         <option value="">Please select your event</option>
         <?php
-
           $date=date('Y-m-d H:i:s');
-
           if($date>'2017-01-19 20:40:00'){
             echo '<option value="testEvent">Test - 19/01/17 - 8:40pm</option>';
+          }
+          if($date>'2017-01-19 20:50:00'){
+            echo '<option value="testEvent2">Test - 19/01/17 - 8:50pm</option>';
           }
           if($date>'2017-01-24 09:00:00'){
             echo '<option value="telford20170124-9am">Telford - 24/01/17 - 9:00am</option>';
@@ -42,19 +43,37 @@
           if($date>'2017-01-25 15:30:00'){
             echo '<option value="telford20170125-3-30pm">Telford - 25/01/17 - 3:30pm</option>';
           }
-          
+          if($date>'2017-01-26 09:00:00'){
+            echo '<option value="telford20170126-9am">Telford - 26/01/17 - 9:00am</option>';
+          }
+          if($date>'2017-01-26 13:00:00'){
+            echo '<option value="telford20170126-1pm">Telford - 26/01/17 - 1:00pm</option>';
+          }
+          if($date>'2017-01-26 15:30:00'){
+            echo '<option value="telford20170126-3-30pm">Telford - 26/01/17 - 3:30pm</option>';
+          }
+          if($date>'2017-01-30 13:00:00'){
+            echo '<option value="worthing20170130-1pm">Worthing - 30/01/17 - 1:00pm</option>';
+          }
+          if($date>'2017-01-30 15:30:00'){
+            echo '<option value="worthing20170130-3-30pm">Worthing - 30/01/17 - 3:30pm</option>';
+          }
+          if($date>'2017-01-31 09:30:00'){
+            echo '<option value="london20170131-9-30am">London - 31/01/17 - 9:30am</option>';
+          }
+          if($date>'2017-01-31 15:30:00'){
+            echo '<option value="southend20170131-3-30pm">Southend - 31/01/17 - 3:30pm</option>';
+          }
+          if($date>'2017-02-01 10:00:00'){
+            echo '<option value="aston20170201-10am">Aston - 01/02/17 - 10:00am</option>';
+          }
+          if($date>'2017-02-01 12:30:00'){
+            echo '<option value="aston20170201-12-30am">Aston - 01/02/17 - 12:30pm</option>';
+          }
+          if($date>'2017-02-02 10:00:00'){
+            echo '<option value="newcastle20170202-10am">Newcastle - 02/02/17 - 10:00am</option>';
+          }        
         ?>
-        
-        <option value="telford20170126-9am">Telford - 26/01/17 - 9:00am</option>
-        <option value="telford20170126-1pm">Telford - 26/01/17 - 1:00pm</option>
-        <option value="telford20170126-3-30pm">Telford - 26/01/17 - 3:30pm</option>
-        <option value="worthing20170130-1pm">Worthing - 30/01/17 - 1:00pm</option>
-        <option value="worthing20170130-3-30pm">Worthing - 30/01/17 - 3:30pm</option>
-        <option value="london20170131-9-30am">London - 31/01/17 - 9:30am</option>
-        <option value="southend20170131-3-30pm">Southend - 31/01/17 - 3:30pm</option>
-        <option value="aston20170201-10am">Aston - 01/02/17 - 10:00am</option>
-        <option value="aston20170201-12-30am">Aston - 01/02/17 - 12:30pm</option>
-        <option value="newcastle20170202-10am">Newcastle - 02/02/17 - 10:00am</option>
       </select>
     </fieldset>
     <br/>
