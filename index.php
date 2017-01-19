@@ -15,8 +15,8 @@
     </fieldset>
     <fieldset>
       <b>Which event did you attend?</b><br/>
-      <select id="event" name="event" placeholder="Please select your event" required="true">
-        <!-- <option value="">Please select your event</option> -->
+      <select id="event" name="event" required="true">
+        <option value="" disabled selected>Please select your event</option>
         <?php
           $date=date('Y-m-d H:i:s');
           if($date>'2017-01-19 20:40:00'){
