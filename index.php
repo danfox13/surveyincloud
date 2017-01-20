@@ -19,13 +19,6 @@
         <option value="" disabled selected>Please select your event</option>
         <?php
           $date=date('Y-m-d H:i:s');
-          $date = $date *2;
-          if($date>'2017-01-19 20:40:00'){
-            echo '<option value="testEvent">Test - 19/01/17 - 8:40pm</option>';
-          }
-          if($date>'2017-01-19 20:50:00'){
-            echo '<option value="testEvent2">Test - 19/01/17 - 8:50pm</option>';
-          }
           if($date>'2017-01-24 09:00:00'){
             echo '<option value="telford20170124-9am">Telford - 24/01/17 - 9:00am</option>';
           }
@@ -62,8 +55,8 @@
           if($date>'2017-01-31 09:30:00'){
             echo '<option value="london20170131-9-30am">London - 31/01/17 - 9:30am</option>';
           }
-          if($date>'2017-01-31 15:30:00'){
-            echo '<option value="southend20170131-3-30pm">Southend - 31/01/17 - 3:30pm</option>';
+          if($date>'2017-01-31 14:00:00'){
+            echo '<option value="southend20170131-2-00pm">Southend - 31/01/17 - 2:00pm</option>';
           }
           if($date>'2017-02-01 10:00:00'){
             echo '<option value="aston20170201-10am">Aston - 01/02/17 - 10:00am</option>';
@@ -122,7 +115,7 @@
       </div>
     </fieldset>
     <fieldset>
-      I understand how and why we are trying to drive integration across the wider Capgemini
+      I’m clear how we are going to drive greater integration with wider Capgemini
       <div class="radio">
         <input type="radio" name="q5" value="1"> 1&nbsp&nbsp
         <input type="radio" name="q5" value="2"> 2&nbsp&nbsp
