@@ -47,7 +47,15 @@ $stmt->bind_param($name, $event, $q1, $q1Comment, $q2, $q2Comment, $q3, $q3Comme
 
 $stmt->execute();
 
-$conn->close();
-header('Location: complete.php');
+if ($conn->query($sql) === TRUE) {
+	$conn->close();
+    header('Location: complete.php');
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+    $conn->close();
+    header('Location: error.php');
+}
+
+
 
 ?>
