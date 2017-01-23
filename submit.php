@@ -7,13 +7,7 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 
-//$conn = new mysqli($server, $username, $password, $db);
-
-
-$conn = new PDO('mysql:dbname=${db};host=${server};charset=utf8', '${username}', '${password}');
-
-$conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$conn = new mysqli($server, $username, $password, $db);
 
 
 $name = $_POST["name"];
@@ -46,22 +40,12 @@ if ($conn->connect_error) {
 //     //header('Location: error.php');
 // }
 
-$stmt = $conn->prepare('INSERT INTO heroku_686d4942c2b2587.surveyresponse (name, event, q1, q1Comment, q2, q2Comment, q3, q3Comment, q4, q4Comment, q5, q5Comment, comments) VALUES (:name, :event, :q1, :q1Comment, :q2, :q2Comment, :q3, :q3Comment, :q4, :q4Comment, :q5, :q5Comment, :comments)');
+$stmt = $conn->prepare('INSERT INTO heroku_686d4942c2b2587.surveyresponse (name, event, q1, q1Comment, q2, q2Comment, q3, q3Comment, q4, q4Comment, q5, q5Comment, comments) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
-$stmt->execute(array(
-    "name" => $name,
-    "event" => $event,
-    "q1" => $q1,
-    "q1Comment" => $q1Comment,
-    "q2" => $q2,
-    "q2Comment" => $q2Comment,
-    "q3" => $q3,
-    "q3Comment" => $q3Comment,
-    "q4" => $q4,
-    "q4Comment" => $q4Comment,
-    "q5" => $q5,
-    "q5Comment" => $q5Comment,
-    "comments" => $comments));
+
+$stmt->bind_param($name, $event, $q1, $q1Comment, $q2, $q2Comment, $q3, $q3Comment, $q4, $q4Comment, $q5, $q5Comment, $comments);
+
+
 
 $conn->close();
 header('Location: complete.php');
