@@ -43,7 +43,7 @@ if ($conn->connect_error) {
 $stmt = $conn->prepare('INSERT INTO heroku_686d4942c2b2587.surveyresponse (name, event, q1, q1Comment, q2, q2Comment, q3, q3Comment, q4, q4Comment, q5, q5Comment, comments) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
 
-$row = $stmt->bind_param("s,s,s,s,s,s,s,s,s,s,s,s,s", $name, $event, $q1, $q1Comment, $q2, $q2Comment, $q3, $q3Comment, $q4, $q4Comment, $q5, $q5Comment, $comments);
+$row = $stmt->bind_param("sssssssssssss", $name, $event, $q1, $q1Comment, $q2, $q2Comment, $q3, $q3Comment, $q4, $q4Comment, $q5, $q5Comment, $comments);
 
 $stmt->execute();
 
