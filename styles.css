@@ -4,7 +4,7 @@ body {
   font-size: 15px;
   line-height: 30px;
   color: #777;
-  background: #4da6ff;
+  background: #214dbc;
 }
 
 img {
@@ -21,10 +21,9 @@ img {
 .radio {
   margin: 0 auto;
   position: relative;
-  border: 1px solid #aaa;
+  border: 0px solid #aaa;
   background: #ffffff;
 }
-
 
 select#event {
   width: 100%;

@@ -82,6 +82,7 @@
         <input type="radio" name="q1" value="3"> 3&nbsp&nbsp
         <input type="radio" name="q1" value="4"> 4&nbsp&nbsp
         <input type="radio" name="q1" value="5"> 5&nbsp&nbsp
+        <input placeholder="Any comments on this statement?" name="q1comment" type="text">
       </div>
     </fieldset>
     <fieldset>
@@ -92,6 +93,7 @@
         <input type="radio" name="q2" value="3"> 3&nbsp&nbsp
         <input type="radio" name="q2" value="4"> 4&nbsp&nbsp
         <input type="radio" name="q2" value="5"> 5&nbsp&nbsp
+        <input placeholder="Any comments on this statement?" name="q2comment" type="text">
       </div>
     </fieldset>
 
@@ -103,6 +105,7 @@
         <input type="radio" name="q3" value="3"> 3&nbsp&nbsp
         <input type="radio" name="q3" value="4"> 4&nbsp&nbsp
         <input type="radio" name="q3" value="5"> 5&nbsp&nbsp
+        <input placeholder="Any comments on this statement?" name="q3comment" type="text">
       </div>
     </fieldset>
     <fieldset>
@@ -113,6 +116,7 @@
         <input type="radio" name="q4" value="3"> 3&nbsp&nbsp
         <input type="radio" name="q4" value="4"> 4&nbsp&nbsp
         <input type="radio" name="q4" value="5"> 5&nbsp&nbsp
+        <input placeholder="Any comments on this statement?" name="q4comment" type="text">
       </div>
     </fieldset>
     <fieldset>
@@ -123,6 +127,7 @@
         <input type="radio" name="q5" value="3"> 3&nbsp&nbsp
         <input type="radio" name="q5" value="4"> 4&nbsp&nbsp
         <input type="radio" name="q5" value="5"> 5&nbsp&nbsp
+        <input placeholder="Any comments on this statement?" name="q5comment" type="text">
       </div>
     </fieldset>
     <fieldset>
