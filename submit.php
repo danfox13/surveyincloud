@@ -44,8 +44,8 @@ $stmt = $conn->prepare('INSERT INTO heroku_686d4942c2b2587.surveyresponse (name,
 
 $stmt->execute(array(
     "name" => $name,
-    "event" => $event
-    "q1" => $q1
+    "event" => $event,
+    "q1" => $q1,
     "q1Comment" => $q1Comment,
     "q2" => $q2,
     "q2Comment" => $q2Comment,
