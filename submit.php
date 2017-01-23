@@ -40,7 +40,7 @@ if ($conn->connect_error) {
 //     //header('Location: error.php');
 // }
 
-$stmt = $conn->prepare('INSERT INTO heroku_686d4942c2b2587.surveyresponse (name, event, q1, q1Comment, q2, q2Comment, q3, q3Comment, q4, q4Comment, q5, q5Comment, comments) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+$stmt = $conn->prepare('INSERT INTO heroku_686d4942c2b2587.surveyresponse (name, event, q1, q1Comment, q2, q2Comment, q3, q3Comment, q4, q4Comment, q5, q5Comment, comments) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
 
 $stmt->bind_param($name, $event, $q1, $q1Comment, $q2, $q2Comment, $q3, $q3Comment, $q4, $q4Comment, $q5, $q5Comment, $comments);
