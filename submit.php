@@ -7,7 +7,13 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 
-$conn = new mysqli($server, $username, $password, $db);
+//$conn = new mysqli($server, $username, $password, $db);
+
+
+$conn = new PDO('mysql:dbname=${db};host=${server};charset=utf8', '${username}', '${password}');
+
+$conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 $name = $_POST["name"];
