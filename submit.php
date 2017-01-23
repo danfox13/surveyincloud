@@ -18,6 +18,11 @@ $q3 = $_POST["q3"];
 $q4 = $_POST["q4"];
 $q5 = $_POST["q5"];
 $comments = $_POST["comments"];
+$q1Comment = $_POST["q1Comment"];
+$q2Comment = $_POST["q2Comment"];
+$q3Comment = $_POST["q3Comment"];
+$q4Comment = $_POST["q4Comment"];
+$q5Comment = $_POST["q5Comment"];
 
 
 if ($conn->connect_error) {
@@ -25,8 +30,8 @@ if ($conn->connect_error) {
     header('Location: error.php');
 } 
 
-$sql = "INSERT INTO heroku_686d4942c2b2587.surveyresponse (name, event, q1, q2, q3, q4, q5, comments)
-VALUES ('${name}', '${event}', '${q1}', '${q2}', '${q3}', '${q4}', '${q5}', '${comments}')";
+$sql = "INSERT INTO heroku_686d4942c2b2587.surveyresponse (name, event, q1, q1Comment, q2, q2Comment, q3, q3Comment, q4, q4Comment, q5, q5Comment, comments)
+VALUES ('${name}', '${event}', '${q1}', '${q1Comment}', '${q2}', '${q2Comment}', '${q3}','${q3Comment}', '${q4}', '${q4Comment}', '${q5}', '${q5Comment}', '${comments}')";
 
 if ($conn->query($sql) === TRUE) {
     header('Location: complete.php');
