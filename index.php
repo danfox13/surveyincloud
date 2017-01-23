@@ -8,7 +8,8 @@
 
 <div class="container">  
   <form id="contact" action="submit.php" method="post">
-    <h3>Kick Off 2017</h3>
+    <img src="banner.png">
+    <br/>
     <br/>
     <fieldset>
       <b>Please enter your Net ID:</b> <i>(Leave blank if you wish to remain anonymous)</i><input placeholder="Net ID" name="name" type="text" tabindex="1" autofocus>
