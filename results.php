@@ -16,7 +16,7 @@
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
-      function drawChart() {
+      function drawQ1() {
 
         // Create the data table.
         var data = new google.visualization.DataTable();
@@ -31,12 +31,12 @@
         ]);
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':400,
+        var options = {'title':'Kick Off 2017 was informative and Im glad I attended',
+                       'width':500,
                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.BarChart(document.getElementById('q1Chart'));
         chart.draw(data, options);
       }
     </script>
@@ -49,7 +49,7 @@
 
 <div class="results">
 
-<div id="chart_div"></div>
+<div id="q1Chart"></div>
 <br/>
 <br/>
 
