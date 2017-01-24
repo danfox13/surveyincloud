@@ -3,6 +3,23 @@
   <title>Kick Off 2017 - Feedback</title>
   <link rel="stylesheet" href="styles.css">
 
+<?php
+
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+$conn = new mysqli($server, $username, $password, $db);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+?>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -11,24 +28,33 @@
       google.charts.load('current', {'packages':['corechart']});
 
       // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawQ1);
 
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
       function drawQ1() {
 
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
-        ]);
+      	//SELECT q1, COUNT(*) FROM heroku_686d4942c2b2587.surveyresponse WHERE q1 IS NOT NULL GROUP BY q1;
+
+
+      	<?php
+
+      	$sqlq1 = "SELECT q1, COUNT(*) as count FROM heroku_686d4942c2b2587.surveyresponse WHERE q1 IS NOT NULL GROUP BY q1 order by q1 asc";
+		$resultq1 = mysqli_query($conn, $sql);
+		
+		if (mysqli_num_rows($resultq1) > 0) {
+    		// output data of each row
+			echo "var data = google.visualization.arrayToDataTable([['Rating', 'Votes', { role: 'style'}],";
+			
+			while($row = $resultq1->fetch_assoc()){
+				echo "['" + $row["q1"] + "', " + $row["count"] + ", 'yellow'],"
+			}
+			
+			echo "]);";
+	
+		} 
+      	?>
 
         // Set chart options
         var options = {'title':'Kick Off 2017 was informative and Im glad I attended',
@@ -36,7 +62,7 @@
                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.BarChart(document.getElementById('q1Chart'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('q1Chart'));
         chart.draw(data, options);
       }
     </script>
@@ -55,24 +81,8 @@
 
 
 
+
 <?php
-
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
-
-$conn = new mysqli($server, $username, $password, $db);
-
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-
-
 $sql = "SELECT * FROM heroku_686d4942c2b2587.surveyresponse";
 $result = mysqli_query($conn, $sql);
 
