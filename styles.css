@@ -23,7 +23,7 @@ img {
   margin: 0 auto;
   position: relative;
   background: #ffffff;
-  padding: 25px;
+  padding: 40px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
@@ -46,7 +46,7 @@ select#event {
 
 table {
     border-collapse: collapse;
-    width: 90%;
+    width: 100%;
 }
 
 table, th, td {
