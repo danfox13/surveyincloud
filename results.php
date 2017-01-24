@@ -36,7 +36,7 @@ if (!$conn) {
       function drawQ1() {
       	<?php
       	$sqlq1 = "SELECT q1, COUNT(*) as count FROM heroku_686d4942c2b2587.surveyresponse WHERE q1 IS NOT NULL GROUP BY q1 order by q1 asc";
-		$resultq1 = mysqli_query($conn, $sql);
+		$resultq1 = mysqli_query($conn, $sqlq1);
 		
 		if (mysqli_num_rows($resultq1) > 0) {
     		// output data of each row
