@@ -24,35 +24,38 @@ if (mysqli_num_rows($result) > 0) {
 
 	echo "name, event, q1, q1Comment, q2, q2Comment, q3, q3Comment, q4, q4Comment, q5, q5Comment, comments <br/>";
 
+	echo '<table style="width:90%"><tr><th>Net ID</th><th>Event</th><th>Q1</th><th>Q1 Comment</th><th>Q2</th><th>Q2 Comment</th><th>Q3</th><th>Q3 Comment</th><th>Q4</th><th>Q4 Comment</th><th>Q5</th><th>Q5 Comment</th><th>Comments</th></tr>'
+
 
 	while($row = $result->fetch_assoc()){
 
+		echo "<tr><td>"
 		echo $row["name"];
-		echo ", ";
+		echo "</td><td>";
 		echo $row["event"]; 
-		echo ", "; 
+		echo "</td><td>"; 
 		echo $row["q1"];
-		echo ", ";
+		echo "</td><td>";
 		echo $row["q1Comment"];
-		echo ", "; 
+		echo "</td><td>"; 
 		echo $row["q2"];
-		echo ", "; 
+		echo "</td><td>"; 
 		echo $row["q2Comment"];
-		echo ", "; 
+		echo "</td><td>"; 
 		echo $row["q3"];
-		echo ", ";
+		echo "</td><td>";
 		echo $row["q3Comment"];
-		echo ", ";
+		echo "</td><td>";
 		echo $row["q4"];
-		echo ", ";
+		echo "</td><td>";
 		echo $row["q4Comment"];
-		echo ", ";
+		echo "</td><td>";
 		echo $row["q5"];
-		echo ", ";
+		echo "</td><td>";
 		echo $row["q5Comment"];
-		echo ", "; 
+		echo "</td><td>"; 
 		echo $row["comments"];
-		echo "<br/>"; 
+		echo "</td></tr>"; 
 
 	}
 } else {
