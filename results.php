@@ -40,13 +40,15 @@ if (!$conn) {
 		
 		if (mysqli_num_rows($resultq1) > 0) {
     		// output data of each row
-			echo "var data = google.visualization.arrayToDataTable([['Rating', 'Votes', { role: 'style'}],";
+			$chartString = "var data = google.visualization.arrayToDataTable([['Rating', 'Votes', { role: 'style'}],";
 			
 			while($row = $resultq1->fetch_assoc()){
-				echo "['" + $row["q1"] + "', " + $row["count"] + ", 'yellow'],";
+				$chartString .= "['" + $row["q1"] + "', " + $row["count"] + ", 'yellow'],";
 			}
 			
-			echo "]);";
+			$chartString .= "]);";
+
+			echo $chartString;
 	
 		} 
       	?>
