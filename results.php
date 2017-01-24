@@ -42,12 +42,19 @@
     </script>
 
 
-  
+
 </head>
 
 <body>  
 
 <div class="results">
+
+<div id="chart_div"></div>
+<br/>
+<br/>
+
+
+
 <?php
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
