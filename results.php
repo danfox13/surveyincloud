@@ -34,12 +34,7 @@ if (!$conn) {
       // instantiates the pie chart, passes in the data and
       // draws it.
       function drawQ1() {
-
-      	//SELECT q1, COUNT(*) FROM heroku_686d4942c2b2587.surveyresponse WHERE q1 IS NOT NULL GROUP BY q1;
-
-
       	<?php
-
       	$sqlq1 = "SELECT q1, COUNT(*) as count FROM heroku_686d4942c2b2587.surveyresponse WHERE q1 IS NOT NULL GROUP BY q1 order by q1 asc";
 		$resultq1 = mysqli_query($conn, $sql);
 		
@@ -48,7 +43,7 @@ if (!$conn) {
 			echo "var data = google.visualization.arrayToDataTable([['Rating', 'Votes', { role: 'style'}],";
 			
 			while($row = $resultq1->fetch_assoc()){
-				echo "['" + $row["q1"] + "', " + $row["count"] + ", 'yellow'],"
+				echo "['" + $row["q1"] + "', " + $row["count"] + ", 'yellow'],";
 			}
 			
 			echo "]);";
