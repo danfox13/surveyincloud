@@ -58,6 +58,8 @@ if (mysqli_num_rows($result) > 0) {
 		echo "</td></tr>"; 
 
 	}
+
+	echo "</table>";
 } else {
     echo "0 results";
 }
