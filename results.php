@@ -22,8 +22,6 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
 
-	echo "name, event, q1, q1Comment, q2, q2Comment, q3, q3Comment, q4, q4Comment, q5, q5Comment, comments <br/>";
-
 	echo '<table border="1"><tr><th>Net ID</th><th>Event</th><th>Q1</th><th>Q1 Comment</th><th>Q2</th><th>Q2 Comment</th><th>Q3</th><th>Q3 Comment</th><th>Q4</th><th>Q4 Comment</th><th>Q5</th><th>Q5 Comment</th><th>Comments</th></tr>';
 
 
