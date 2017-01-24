@@ -20,7 +20,6 @@
         <option value="" disabled selected>Please select your event</option>
         <?php
           $date=date('Y-m-d H:i:s');
-          $date=$date*2;
           if($date>'2017-01-24 09:00:00'){
             echo '<option value="telford20170124-9am">Telford - 24/01/17 - 9:00am</option>';
           }
