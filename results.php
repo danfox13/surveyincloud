@@ -28,7 +28,7 @@ if (!$conn) {
       google.charts.load('current', {'packages':['corechart']});
 
       // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawQ1);
+      google.charts.setOnLoadCallback(drawQ1, drawQ2);
 
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
@@ -41,15 +41,11 @@ if (!$conn) {
 		if (mysqli_num_rows($resultq1) > 0) {
     		// output data of each row
 			$chartString = "var data = google.visualization.arrayToDataTable([['Rating', 'Votes', { role: 'style'}],";
-			
 			while($rowq1 = $resultq1->fetch_assoc()){
-				$chartString .= "['" . $rowq1["q1"] . "'," . $rowq1["count"] . ", 'yellow'],";
+				$chartString .= "['" . $rowq1["q1"] . "'," . $rowq1["count"] . ", 'blue'],";
 			}
-			
 			$chartString .= "]);";
-
 			echo $chartString;
-	
 		}
       	?>
 
@@ -62,6 +58,39 @@ if (!$conn) {
         var chart = new google.visualization.ColumnChart(document.getElementById('q1Chart'));
         chart.draw(data, options);
       }
+
+      function drawQ2() {
+      	<?php
+      	$sqlq2 = "SELECT q2, COUNT(*) as count FROM heroku_686d4942c2b2587.surveyresponse WHERE q2 IS NOT NULL GROUP BY q2 order by q2 asc";
+		$resultq2 = mysqli_query($conn, $sqlq2);
+		
+		if (mysqli_num_rows($resultq2) > 0) {
+    		// output data of each row
+			$chartString = "var data = google.visualization.arrayToDataTable([['Rating', 'Votes', { role: 'style'}],";
+			while($rowq2 = $resultq2->fetch_assoc()){
+				$chartString .= "['" . $rowq2["q2"] . "'," . $rowq2["count"] . ", 'blue'],";
+			}
+			$chartString .= "]);";
+			echo $chartString;
+		}
+      	?>
+
+        // Set chart options
+        var options = {'title':'I feel informed about the highlights and challenges from 2016',
+                       'width':500,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.ColumnChart(document.getElementById('q2Chart'));
+        chart.draw(data, options);
+      }
+
+
+
+
+
+
+
     </script>
 
 
@@ -72,7 +101,7 @@ if (!$conn) {
 
 <div class="results">
 
-<div id="q1Chart"></div>
+<div id="q1Chart"></div>&nbsp&nbsp<div id="q2Chart"></div>
 <br/>
 <br/>
 
