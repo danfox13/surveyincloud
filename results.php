@@ -30,6 +30,9 @@ if (!$conn) {
       // Set a callback to run when the Google Visualization API is loaded.
       google.charts.setOnLoadCallback(drawQ1);
       google.charts.setOnLoadCallback(drawQ2);
+      google.charts.setOnLoadCallback(drawQ3);
+      google.charts.setOnLoadCallback(drawQ4);
+      google.charts.setOnLoadCallback(drawQ5);
 
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
@@ -86,11 +89,83 @@ if (!$conn) {
         chart.draw(data, options);
       }
 
+      function drawQ3() {
+      	<?php
+      	$sqlq3 = "SELECT q3, COUNT(*) as count FROM heroku_686d4942c2b2587.surveyresponse WHERE q3 IS NOT NULL GROUP BY q3 order by q3 asc";
+		$resultq3 = mysqli_query($conn, $sqlq3);
+		
+		if (mysqli_num_rows($resultq3) > 0) {
+    		// output data of each row
+			$chartString = "var data = google.visualization.arrayToDataTable([['Rating', 'Votes', { role: 'style'}],";
+			while($rowq3 = $resultq3->fetch_assoc()){
+				$chartString .= "['" . $rowq3["q3"] . "'," . $rowq3["count"] . ", 'blue'],";
+			}
+			$chartString .= "]);";
+			echo $chartString;
+		}
+      	?>
 
+        // Set chart options
+        var options = {'title':'I understand the HMRC Account Strategy and the part I can play',
+                       'width':500,
+                       'height':300};
 
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.ColumnChart(document.getElementById('q3Chart'));
+        chart.draw(data, options);
+      }
 
+      function drawQ4() {
+      	<?php
+      	$sqlq4 = "SELECT q4, COUNT(*) as count FROM heroku_686d4942c2b2587.surveyresponse WHERE q4 IS NOT NULL GROUP BY q4 order by q4 asc";
+		$resultq4 = mysqli_query($conn, $sqlq4);
+		
+		if (mysqli_num_rows($resultq4) > 0) {
+    		// output data of each row
+			$chartString = "var data = google.visualization.arrayToDataTable([['Rating', 'Votes', { role: 'style'}],";
+			while($rowq4 = $resultq4->fetch_assoc()){
+				$chartString .= "['" . $rowq4["q4"] . "'," . $rowq4["count"] . ", 'blue'],";
+			}
+			$chartString .= "]);";
+			echo $chartString;
+		}
+      	?>
 
+        // Set chart options
+        var options = {'title':'I am clear about how we are supporting our people',
+                       'width':500,
+                       'height':300};
 
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.ColumnChart(document.getElementById('q4Chart'));
+        chart.draw(data, options);
+      }
+
+      function drawQ5() {
+      	<?php
+      	$sqlq5 = "SELECT q5, COUNT(*) as count FROM heroku_686d4942c2b2587.surveyresponse WHERE q5 IS NOT NULL GROUP BY q5 order by q5 asc";
+		$resultq5 = mysqli_query($conn, $sqlq5);
+		
+		if (mysqli_num_rows($resultq5) > 0) {
+    		// output data of each row
+			$chartString = "var data = google.visualization.arrayToDataTable([['Rating', 'Votes', { role: 'style'}],";
+			while($rowq5 = $resultq5->fetch_assoc()){
+				$chartString .= "['" . $rowq5["q5"] . "'," . $rowq5["count"] . ", 'blue'],";
+			}
+			$chartString .= "]);";
+			echo $chartString;
+		}
+      	?>
+
+        // Set chart options
+        var options = {'title':'Im clear how we are going to drive greater integration with wider Capgemini',
+                       'width':500,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.ColumnChart(document.getElementById('q5Chart'));
+        chart.draw(data, options);
+      }
 
     </script>
 
@@ -103,8 +178,7 @@ if (!$conn) {
 <div class="results">
 
 <div id="q1Chart"></div>&nbsp&nbsp<div id="q2Chart"></div>
-<br/>
-<br/>
+
 
 
 
