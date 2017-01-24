@@ -16,13 +16,13 @@ if (!$conn) {
 
 
 
-$sql = "SELECT * FROM heroku_686d4942c2b2587.surveyresponse;";
+$sql = "SELECT * FROM heroku_686d4942c2b2587.surveyresponse";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
 
-	echo "name, event, q1, q1Comment, q2, q2Comment, q3, q3Comment, q4, q4Comment, q5, q5Comment, comments <br/>"
+	echo "name, event, q1, q1Comment, q2, q2Comment, q3, q3Comment, q4, q4Comment, q5, q5Comment, comments <br/>";
 
     while($row = mysqli_fetch_assoc($result)) {
         echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
