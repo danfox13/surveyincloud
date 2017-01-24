@@ -177,11 +177,7 @@ if (!$conn) {
 
 <div class="results">
 
-<div id="q1Chart"></div>&nbsp&nbsp<div id="q2Chart"></div>
-
-
-
-
+<div id="q1Chart"></div>&nbsp&nbsp<div id="q2Chart"></div>&nbsp&nbsp<div id="q3Chart"></div>&nbsp&nbsp<div id="q4Chart"></div>&nbsp&nbsp<div id="q5Chart"></div>
 
 <?php
 $sql = "SELECT * FROM heroku_686d4942c2b2587.surveyresponse";
