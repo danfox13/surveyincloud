@@ -20,10 +20,10 @@ img {
 }
 
 .results {
-  margin: 0 auto;
+  margin: 10 auto;
   position: relative;
   background: #ffffff;
-  padding: 40px;
+  padding: 25px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
@@ -55,7 +55,6 @@ table, th, td {
     text-align: left;
 }
 
-tr:hover {background-color: #66b5ff}
 tr:nth-child(even) {background-color: #b3daff}
 
 th {
