@@ -42,8 +42,8 @@ if (!$conn) {
     		// output data of each row
 			$chartString = "var data = google.visualization.arrayToDataTable([['Rating', 'Votes', { role: 'style'}],";
 			
-			while($row = $resultq1->fetch_assoc()){
-				$chartString .= "['" + "${row['q1']}" + "', '" + "${row['count']}" + ", 'yellow'],";
+			while($rowq1 = $resultq1->fetch_assoc()){
+				$chartString .= "['" + '${rowq1["q1"]}' + "', '" + '${rowq1["count"]}' + ", 'yellow'],";
 			}
 			
 			$chartString .= "]);";
