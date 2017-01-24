@@ -43,7 +43,7 @@ if (!$conn) {
 			$chartString = "var data = google.visualization.arrayToDataTable([['Rating', 'Votes', { role: 'style'}],";
 			
 			while($row = $resultq1->fetch_assoc()){
-				$chartString .= "['" + $row["q1"] + "', '" + $row["count"] + ", 'yellow'],";
+				$chartString .= "['" + "${row['q1']}" + "', '" + "${row['count']}" + ", 'yellow'],";
 			}
 			
 			$chartString .= "]);";
