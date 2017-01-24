@@ -24,9 +24,37 @@ if (mysqli_num_rows($result) > 0) {
 
 	echo "name, event, q1, q1Comment, q2, q2Comment, q3, q3Comment, q4, q4Comment, q5, q5Comment, comments <br/>";
 
-    while($row = mysqli_fetch_assoc($result)) {
-       echo $row["name"] + "," +  $row["event"] + "," +  $row["q1"] + "," +  $row["q1Comment"] + "," +  $row["q2"] + "," +  $row["q2Comment"] + "," +  $row["q3"] + "," +  $row["q3Comment"] + "," +  $row["q4"] + "," +  $row["q4Comment"] + "," +  $row["q5"] + "," +  $row["q5Comment"] + "," +  $row["comments"] + "<br/>";  
-    }
+
+	while($row = $result->fetch_assoc()){
+
+		echo $row["name"];
+		echo ", ";
+		echo $row["event"]; 
+		echo ", "; 
+		echo $row["q1"];
+		echo ", ";
+		echo $row["q1Comment"];
+		echo ", "; 
+		echo $row["q2"];
+		echo ", "; 
+		echo $row["q2Comment"];
+		echo ", "; 
+		echo $row["q3"];
+		echo ", ";
+		echo $row["q3Comment"];
+		echo ", ";
+		echo $row["q4"];
+		echo ", ";
+		echo $row["q4Comment"];
+		echo ", ";
+		echo $row["q5"];
+		echo ", ";
+		echo $row["q5Comment"];
+		echo ", "; 
+		echo $row["comments"];
+		echo "<br/>"; 
+
+	}
 } else {
     echo "0 results";
 }
