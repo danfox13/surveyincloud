@@ -29,7 +29,7 @@ if (mysqli_num_rows($result) > 0) {
 
 	while($row = $result->fetch_assoc()){
 
-		echo "<tr><td>"
+		echo "<tr><td>";
 		echo $row["name"];
 		echo "</td><td>";
 		echo $row["event"]; 
