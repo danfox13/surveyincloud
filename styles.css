@@ -20,12 +20,10 @@ img {
 }
 
 .results {
-  width: 100%;
   margin: 0 auto;
   position: relative;
   background: #ffffff;
   padding: 25px;
-  margin: 30px 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
@@ -57,8 +55,8 @@ table, th, td {
     text-align: left;
 }
 
-tr:hover {background-color: #f5f5f5}
-tr:nth-child(even) {background-color: #f2f2f2}
+tr:hover {background-color: #66b5ff}
+tr:nth-child(even) {background-color: #b3daff}
 
 th {
     background-color: #214dbc;
