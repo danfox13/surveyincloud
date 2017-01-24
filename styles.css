@@ -32,7 +32,10 @@ select#event {
   background: #FFF;
   margin: 0 0 5px;
   padding: 10px;
-  color: #262626;
+  color: #666666;
+  font-size: 15px;
+}
+
 }
 
 #contact input[type="text"],
